@@ -8,8 +8,8 @@ export const useSocket = (...args) => {
     setSocket(() => io(...args));
 
     return () => {
-      socket?.removeAllListeners();
-      socket?.close();
+      socket && socket.removeAllListeners();
+      socket && socket.close();
     };
   }, []);
 
